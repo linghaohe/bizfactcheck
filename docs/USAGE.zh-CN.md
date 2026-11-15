@@ -67,7 +67,7 @@ bizfactcheck verify checks.json --lang zh --format html --output 段落核对.ht
 
 ## 输出与退出码
 
-格式：`text`（默认）、`json`、`md`、`html`。语言：`en`（默认）、`zh`。JSON保留稳定字段名与理由码，面向人的报告采用对应语言。HTML单文件不加载远程脚本、字体或统计服务。
+格式：`text`（默认）、`json`、`md`、`html`。语言：`en`（默认）、`zh`。CLI的报告文件、标准输出和错误输出统一使用UTF-8，包括Windows下的重定向输出。JSON保留稳定字段名与理由码，面向人的报告采用对应语言。HTML单文件不加载远程脚本、字体或统计服务。
 
 | 退出码 | 含义 |
 |---|---|

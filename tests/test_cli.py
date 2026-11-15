@@ -11,6 +11,7 @@ import sys
 import tempfile
 import unittest
 
+import bizfactcheck
 from bizfactcheck.cli import main
 
 
@@ -27,12 +28,15 @@ class CLITests(unittest.TestCase):
         path.write_text(text, encoding="utf-8")
         return path
 
-    def run_cli(self, *args):
+    def run_cli(self, *args, io_encoding=None, raw=False):
         env = os.environ.copy()
-        env["PYTHONPATH"] = str(Path(__file__).resolve().parents[1] / "src")
+        env["PYTHONPATH"] = str(Path(bizfactcheck.__file__).resolve().parent.parent)
+        if io_encoding is not None:
+            env["PYTHONIOENCODING"] = io_encoding
         return subprocess.run(
             [sys.executable, "-m", "bizfactcheck", *(str(arg) for arg in args)],
-            cwd=self.root, env=env, capture_output=True, text=True, encoding="utf-8", timeout=15,
+            cwd=self.root, env=env, capture_output=True, text=not raw,
+            encoding=None if raw else "utf-8", timeout=15,
         )
 
     def check(self, *options):
@@ -88,6 +92,35 @@ class CLITests(unittest.TestCase):
                         self.assertEqual(json.loads(result.stdout)["findings"][0]["status"], "match")
                     else:
                         self.assertIn("Business fact check" if language == "en" else "业务事实核对报告", result.stdout)
+
+    def test_english_stdout_uses_utf8_when_process_encoding_is_cp1252(self):
+        result = self.run_cli("check", "--source", self.source, "--draft", self.draft,
+                              io_encoding="cp1252", raw=True)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn("BizFactCheck — Business fact check".encode("utf-8"), result.stdout)
+        self.assertEqual(result.stderr, b"")
+
+    def test_chinese_stdout_uses_utf8_for_all_formats_with_cp1252(self):
+        for format in ("text", "json", "md", "html"):
+            with self.subTest(format=format):
+                result = self.run_cli("check", "--source", self.source, "--draft", self.draft,
+                                      "--lang", "zh", "--format", format,
+                                      io_encoding="cp1252", raw=True)
+                self.assertEqual(result.returncode, 0, result.stderr)
+                self.assertEqual(result.stderr, b"")
+                if format == "json":
+                    self.assertEqual(json.loads(result.stdout)["findings"][0]["status"], "match")
+                else:
+                    self.assertIn("业务事实核对报告".encode("utf-8"), result.stdout)
+                self.assertIn("仅核对列出的字段".encode("utf-8"), result.stdout)
+
+    def test_chinese_error_stderr_uses_utf8_when_process_encoding_is_cp1252(self):
+        result = self.run_cli("check", "--source", self.root / "missing.md", "--draft", self.draft,
+                              "--lang", "zh", io_encoding="cp1252", raw=True)
+        self.assertEqual(result.returncode, 2)
+        self.assertEqual(result.stdout, b"")
+        self.assertIn("无法读取或校验输入".encode("utf-8"), result.stderr)
+        self.assertNotIn(b"Traceback", result.stderr)
 
     def test_no_labeled_pairs_exits_two_without_claiming_success(self):
         self.source.write_text("A source paragraph without labeled fields.", encoding="utf-8")

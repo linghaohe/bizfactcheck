@@ -57,6 +57,12 @@ def _error(key, lang):
 
 def main(argv=None) -> int:
     """Write the report, then return 0, 1 or 2 according to its coverage."""
+    # Both entry points must emit UTF-8 even when the host defaults to a legacy
+    # encoding. Embedded callers may supply StringIO without reconfigure().
+    for stream in (sys.stdout, sys.stderr):
+        reconfigure = getattr(stream, "reconfigure", None)
+        if callable(reconfigure):
+            reconfigure(encoding="utf-8")
     try:
         args = _parser().parse_args(argv)
     except SystemExit as error:

@@ -69,7 +69,7 @@ The checker does not infer arbitrary arithmetic, convert currencies, establish e
 
 ## Output and exit codes
 
-Formats: `text` (default), `json`, `md`, `html`. Languages: `en` (default), `zh`. JSON keys and reason codes remain stable; human-facing reports are translated. Standalone HTML uses no remote scripts, fonts or analytics.
+Formats: `text` (default), `json`, `md`, `html`. Languages: `en` (default), `zh`. The CLI writes UTF-8 to report files, standard output and standard error, including when redirected on Windows. JSON keys and reason codes remain stable; human-facing reports are translated. Standalone HTML uses no remote scripts, fonts or analytics.
 
 | Exit | Meaning |
 |---|---|
