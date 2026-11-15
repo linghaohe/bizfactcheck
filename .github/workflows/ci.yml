@@ -1,0 +1,67 @@
+name: Checks
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-latest
+            python: '3.9'
+          - os: ubuntu-latest
+            python: '3.12'
+          - os: ubuntu-latest
+            python: '3.13'
+          - os: windows-latest
+            python: '3.12'
+          - os: macos-latest
+            python: '3.12'
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python -m pip install .
+      - run: python -m unittest discover -s tests -v
+      - name: Corrected business examples
+        run: |
+          bizfactcheck check --source examples/en/reference.md --draft examples/en/proposal-corrected.md
+          bizfactcheck check --source examples/zh/reference.md --draft examples/zh/proposal-corrected.md --lang zh
+
+  release:
+    needs: test
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main' && github.repository == 'linghaohe/bizfactcheck'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    concurrency: release-main
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Package the tool and portable skill
+        run: |
+          python -m pip wheel --no-deps . --wheel-dir dist
+          python -m zipfile -c dist/bizfactcheck-skill.zip skills/bizfactcheck
+      - name: Publish a new alpha version after all checks pass
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          version="v$(python -c 'import tomllib; print(tomllib.load(open("pyproject.toml", "rb"))["project"]["version"])')"
+          if gh release view "$version" > /dev/null 2>&1; then
+            echo "Release $version already exists; leaving it unchanged."
+            exit 0
+          fi
+          gh release create "$version" dist/*.whl dist/bizfactcheck-skill.zip \
+            --target "$GITHUB_SHA" --prerelease --title "BizFactCheck $version (alpha)" \
+            --notes-file "docs/releases/$version.md"

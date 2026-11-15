@@ -1,0 +1,4 @@
+interface:
+  display_name: "BizFactCheck · 业务事实核对"
+  short_description: "Review business facts against source documents"
+  default_prompt: "Use $bizfactcheck to review this proposal against the approved reference and show discrepancies with evidence."

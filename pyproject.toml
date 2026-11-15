@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bizfactcheck"
+version = "0.1.0"
+description = "Check business document facts against references, with local evidence and bilingual reports."
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [{name = "Linghao He"}]
+keywords = ["business", "document-review", "fact-checking", "agent-skills", "offline"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Topic :: Office/Business",
+]
+dependencies = []
+
+[project.scripts]
+bizfactcheck = "bizfactcheck.cli:main"
+
+[project.urls]
+Repository = "https://github.com/linghaohe/bizfactcheck"
+Issues = "https://github.com/linghaohe/bizfactcheck/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]

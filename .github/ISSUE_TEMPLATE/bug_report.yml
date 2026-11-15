@@ -1,0 +1,27 @@
+name: Incorrect result / 误报或漏检
+description: Report a reproducible checking problem using fictional data / 用自造材料报告可复现问题
+body:
+  - type: markdown
+    attributes:
+      value: Please do not upload real customer documents, credentials or personal information. 请勿上传真实客户资料、凭据或个人信息。
+  - type: input
+    id: environment
+    attributes:
+      label: Version and environment / 版本与环境
+      description: BizFactCheck version, Python version and operating system
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal fictional example / 最小自造样例
+      description: Include source, draft or manifest snippets and the command. 说明输入和运行命令。
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Expected and actual result / 预期与实际结果
+      description: Explain why the claims share the same business scope. 说明为什么这两项事实应当比较。
+    validations:
+      required: true

@@ -1,0 +1,16 @@
+name: Business use case / 业务需求
+description: Describe the work you want the tool to help with / 说明希望工具帮助完成的工作
+body:
+  - type: textarea
+    id: task
+    attributes:
+      label: Your task and current difficulty / 工作任务与当前困难
+      description: Use fictional examples; describe the desired result rather than only naming a technology.
+    validations:
+      required: true
+  - type: textarea
+    id: example
+    attributes:
+      label: Safe example and expected result / 自造样例与预期结果
+    validations:
+      required: true

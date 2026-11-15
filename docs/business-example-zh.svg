@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="474" viewBox="0 0 1120 474" role="img" aria-labelledby="title desc">
+<title id="title">方案里的承诺，和依据一致吗？</title>
+<desc id="desc">自造示例 · 只核对报告列出的内容，不代表整份文件已通过验收</desc>
+<rect width="1120" height="474" rx="18" fill="#F5F7FB"/>
+<rect x="24" y="24" width="1072" height="426" rx="12" fill="#FFFFFF" stroke="#DCE3EE"/>
+<g font-family="Arial, Helvetica, PingFang SC, Microsoft YaHei, sans-serif">
+<text x="52" y="65" font-size="15" font-weight="700" fill="#3559D9">BizFactCheck</text>
+<text x="52" y="105" font-size="28" font-weight="700" fill="#17243C">方案里的承诺，和依据一致吗？</text>
+<text x="52" y="134" font-size="16" fill="#53627B">本地核对 · 展示依据 · 保留人工判断</text>
+<rect x="48" y="158" width="1024" height="42" rx="6" fill="#EEF2FA"/>
+<text x="64" y="184" font-size="13" font-weight="700" fill="#52617C">核对项</text>
+<text x="293" y="184" font-size="13" font-weight="700" fill="#52617C">已确认资料</text>
+<text x="583" y="184" font-size="13" font-weight="700" fill="#52617C">待审方案</text>
+<text x="861" y="184" font-size="13" font-weight="700" fill="#52617C">结果</text>
+<text x="64" y="232" font-size="16" fill="#26344E" font-weight="400">项目预算</text>
+<text x="293" y="232" font-size="16" fill="#26344E" font-weight="400">120万元</text>
+<text x="583" y="232" font-size="16" fill="#26344E" font-weight="400">1.2亿元</text>
+<text x="861" y="232" font-size="14" fill="#AF3F33" font-weight="700">金额差异</text>
+<line x1="56" x2="1064" y1="251" y2="251" stroke="#EDF0F5"/>
+<text x="64" y="280" font-size="16" fill="#26344E" font-weight="400">报告期间</text>
+<text x="293" y="280" font-size="16" fill="#26344E" font-weight="400">2025年上半年</text>
+<text x="583" y="280" font-size="16" fill="#26344E" font-weight="400">2025年全年</text>
+<text x="861" y="280" font-size="14" fill="#AF3F33" font-weight="700">期间差异</text>
+<line x1="56" x2="1064" y1="299" y2="299" stroke="#EDF0F5"/>
+<text x="64" y="328" font-size="16" fill="#26344E" font-weight="400">项目阶段</text>
+<text x="293" y="328" font-size="16" fill="#26344E" font-weight="400">原型</text>
+<text x="583" y="328" font-size="16" fill="#26344E" font-weight="400">已部署</text>
+<text x="861" y="328" font-size="14" fill="#906019" font-weight="700">需要复核</text>
+<line x1="56" x2="1064" y1="347" y2="347" stroke="#EDF0F5"/>
+<text x="64" y="376" font-size="16" fill="#26344E" font-weight="400">服务期限</text>
+<text x="293" y="376" font-size="16" fill="#26344E" font-weight="400">24小时</text>
+<text x="583" y="376" font-size="16" fill="#26344E" font-weight="400">1天</text>
+<text x="861" y="376" font-size="14" fill="#247259" font-weight="700">等价</text>
+<text x="52" y="423" font-size="13" fill="#637189">自造示例 · 只核对报告列出的内容，不代表整份文件已通过验收</text>
+</g></svg>

@@ -1,0 +1,22 @@
+{
+  "checks": [
+    {
+      "field": "Blue Cedar budget",
+      "kind": "money",
+      "source": {"path": "reference.md", "quote": "The approved budget for Blue Cedar is USD 1.2 million.", "value": "USD 1.2 million"},
+      "draft": {"path": "proposal.md", "quote": "The proposal lists a budget of USD 120 million for Blue Cedar.", "value": "USD 120 million"}
+    },
+    {
+      "field": "Project stage",
+      "kind": "status",
+      "source": {"path": "reference.md", "quote": "The team has completed a prototype; a production rollout has not been confirmed.", "value": "prototype"},
+      "draft": {"path": "proposal.md", "quote": "It describes the system as deployed.", "value": "deployed"}
+    },
+    {
+      "field": "蓝杉项目预算",
+      "kind": "money",
+      "source": {"path": "reference.md", "quote": "蓝杉项目的已确认预算是120万元。", "value": "120万元"},
+      "draft": {"path": "proposal.md", "quote": "方案中写蓝杉项目预算为1.2亿元。", "value": "1.2亿元"}
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="474" viewBox="0 0 1120 474" role="img" aria-labelledby="title desc">
+<title id="title">Does your proposal match the approved facts?</title>
+<desc id="desc">Fictional example · Checks listed comparisons, not the truth of an entire document</desc>
+<rect width="1120" height="474" rx="18" fill="#F5F7FB"/>
+<rect x="24" y="24" width="1072" height="426" rx="12" fill="#FFFFFF" stroke="#DCE3EE"/>
+<g font-family="Arial, Helvetica, PingFang SC, Microsoft YaHei, sans-serif">
+<text x="52" y="65" font-size="15" font-weight="700" fill="#3559D9">BizFactCheck</text>
+<text x="52" y="105" font-size="28" font-weight="700" fill="#17243C">Does your proposal match the approved facts?</text>
+<text x="52" y="134" font-size="16" fill="#53627B">Local checks. Visible evidence. Human judgment.</text>
+<rect x="48" y="158" width="1024" height="42" rx="6" fill="#EEF2FA"/>
+<text x="64" y="184" font-size="13" font-weight="700" fill="#52617C">FIELD</text>
+<text x="293" y="184" font-size="13" font-weight="700" fill="#52617C">APPROVED REFERENCE</text>
+<text x="583" y="184" font-size="13" font-weight="700" fill="#52617C">DRAFT PROPOSAL</text>
+<text x="861" y="184" font-size="13" font-weight="700" fill="#52617C">RESULT</text>
+<text x="64" y="232" font-size="16" fill="#26344E" font-weight="400">Project budget</text>
+<text x="293" y="232" font-size="16" fill="#26344E" font-weight="400">USD 1.2 million</text>
+<text x="583" y="232" font-size="16" fill="#26344E" font-weight="400">USD 120 million</text>
+<text x="861" y="232" font-size="14" fill="#AF3F33" font-weight="700">DIFFERENCE</text>
+<line x1="56" x2="1064" y1="251" y2="251" stroke="#EDF0F5"/>
+<text x="64" y="280" font-size="16" fill="#26344E" font-weight="400">Reporting period</text>
+<text x="293" y="280" font-size="16" fill="#26344E" font-weight="400">H1 2025</text>
+<text x="583" y="280" font-size="16" fill="#26344E" font-weight="400">2025</text>
+<text x="861" y="280" font-size="14" fill="#AF3F33" font-weight="700">DIFFERENCE</text>
+<line x1="56" x2="1064" y1="299" y2="299" stroke="#EDF0F5"/>
+<text x="64" y="328" font-size="16" fill="#26344E" font-weight="400">Project stage</text>
+<text x="293" y="328" font-size="16" fill="#26344E" font-weight="400">Prototype</text>
+<text x="583" y="328" font-size="16" fill="#26344E" font-weight="400">Deployed</text>
+<text x="861" y="328" font-size="14" fill="#906019" font-weight="700">REVIEW</text>
+<line x1="56" x2="1064" y1="347" y2="347" stroke="#EDF0F5"/>
+<text x="64" y="376" font-size="16" fill="#26344E" font-weight="400">Service term</text>
+<text x="293" y="376" font-size="16" fill="#26344E" font-weight="400">24 hours</text>
+<text x="583" y="376" font-size="16" fill="#26344E" font-weight="400">1 day</text>
+<text x="861" y="376" font-size="14" fill="#247259" font-weight="700">EQUIVALENT</text>
+<text x="52" y="423" font-size="13" fill="#637189">Fictional example · Checks listed comparisons, not the truth of an entire document</text>
+</g></svg>
